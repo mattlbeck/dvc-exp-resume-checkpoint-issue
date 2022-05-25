@@ -1,0 +1,6 @@
+stages:
+  test:
+    cmd: python test.py
+    outs:
+      - counter.pkl:
+          checkpoint: true
