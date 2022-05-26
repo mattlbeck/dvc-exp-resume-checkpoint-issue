@@ -1,6 +1,8 @@
 stages:
   test:
     cmd: python test.py
+    params:
+      - steps
     outs:
       - counter.pkl:
           checkpoint: true

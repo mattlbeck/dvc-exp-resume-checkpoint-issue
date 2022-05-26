@@ -1,6 +1,7 @@
 import time
 import pickle
 from pathlib import Path
+import yaml
 import dvc.api
 
 counter = 0
@@ -10,7 +11,8 @@ if counter_file.exists():
     counter = pickle.load(counter_file.open("rb"))
     print(f"Resuming from {counter}")
 
-while counter < 3:
+steps = yaml.safe_load(open("params.yaml"))["steps"]
+while counter < steps:
 
     counter += 1
     print(f"Counter: {counter}")
