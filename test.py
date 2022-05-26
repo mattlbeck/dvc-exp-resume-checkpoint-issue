@@ -10,7 +10,7 @@ if counter_file.exists():
     counter = pickle.load(counter_file.open("rb"))
     print(f"Resuming from {counter}")
 
-while True:
+while counter < 3:
 
     counter += 1
     print(f"Counter: {counter}")
